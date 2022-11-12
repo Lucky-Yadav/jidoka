@@ -14,8 +14,9 @@ mongoose
   .connect(
     "mongodb+srv://jidoka:cOrlTr9f2O90sEC7@cluster0.fgnu9q7.mongodb.net/?retryWrites=true&w=majority"
   )
-  .then(() => { 
+  .then((data) => { 
     console.log("handshake successful");
+
   })
   .catch((err) => {
     console.log(err);
@@ -35,7 +36,9 @@ server.on("connection", (socket) => {
   console.log("connected");
   if (timechange) clearInterval(timechange);
   setInterval( async () => {
-
-    socket.emit("message", new Date());
+    socket.emit(
+      "message",
+      Array.from({ length: 1 }, () => Math.floor(Math.random() * 50) + 10)
+    );
   }, 1000);
 });
