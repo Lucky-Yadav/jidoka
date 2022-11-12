@@ -20,7 +20,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="App">
       <Navbar />
       <Routes>
         <Route
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/Signup" element={<Signup />}></Route>
       </Routes>
-      <h1>{data}</h1>
+      
     </div>
   );
 };

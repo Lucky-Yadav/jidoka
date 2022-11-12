@@ -27,7 +27,7 @@ const token = useSelector((state) => state.auth.token);
   }
 
   const handlelogin = () => {
-      //  console.log(1);
+       console.log(1);
         dispatch(loginloading());
         axios({
           method: "post",

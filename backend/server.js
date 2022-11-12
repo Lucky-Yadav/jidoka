@@ -3,6 +3,7 @@ const  http = require("http");
 const socketio = require("socket.io");
 const PORT = 3070;
 const cors = require("cors");
+var jwt = require("jsonwebtoken");
 const userRouter = require("./routes/userRoutes");
 const mongoose = require("mongoose");
 // const userModel = require("./models/user");
@@ -13,9 +14,9 @@ app.use("/users", userRouter);
 
 mongoose
   .connect(
-    "mongodb+srv://jidoka:cOrlTr9f2O90sEC7@cluster0.fgnu9q7.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://user:wGPrQ0iGQM3rO4nZ@cluster0.zkwpvpy.mongodb.net/?retryWrites=true&w=majority"
   )
-  .then((data) => { 
+  .then((data) => {
     console.log("handshake successful");
   })
   .catch((err) => {
