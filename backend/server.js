@@ -10,17 +10,20 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/users", userRouter);
+
 mongoose
   .connect(
     "mongodb+srv://jidoka:cOrlTr9f2O90sEC7@cluster0.fgnu9q7.mongodb.net/?retryWrites=true&w=majority"
   )
   .then((data) => { 
     console.log("handshake successful");
-
   })
   .catch((err) => {
     console.log(err);
   });
+
+
+
 const httpserver = http.createServer(app);
 const server = new socketio.Server(httpserver, {
   cors: {
