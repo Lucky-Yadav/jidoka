@@ -1,15 +1,17 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 
+const App = () => {
+  useEffect(() => {
+    
+  
+  }, [])
+  
+  return (
+    <div>
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        
-      </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default App;
+export default App
